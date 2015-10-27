@@ -1,0 +1,15 @@
+body {FONT-SIZE: 12px;  MARGIN: 50px; TEXT-AliGN: center}
+img {BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px}
+.news {CLEAR: both; BACKGROUND: url(../images/news_bg.gif); WIDTH: 672px; ColOR: #fff; HEIGHT: 26px}
+.news ul {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; OVERFLOW: hidden; liNE-HEIGHT: 26px; PADDING-TOP: 0px; liST-STYLE-TYPE: none; HEIGHT: 26px}
+.news ul li {MARGIN: 0px 0px 0px 1em; text-align:left;}
+.news ul li.active {DISPLAY: block}
+.news span {BORDER-RIGHT: #fff 1px solid; PADDING-RIGHT: 0.75em; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px 0.75em 0px 0px; PADDING-TOP: 0px}
+.news ul A {ColOR: #fff; TEXT-DECORATION: none}
+.news ul A:hover {TEXT-DECORATION: underline}
+.news ol {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; FLOAT: right; PADDING-BOTTOM: 0px; MARGIN: -19px 8px 0px 0px; PADDING-TOP: 0px; liST-STYLE-TYPE: none}
+.news ol li {DISPLAY: inline; MARGIN: 0px 0px 0px 3px; width:10px;}
+.news ol li A {BACKGROUND: url(../images/switcher.gif) 0px -10px}
+.news ol li A:hover {BACKGROUND: url(../images/switcher.gif) 0px 10px}
+.news ol li A.active {BACKGROUND: url(../images/switcher.gif) 0px 0px}
+.news ol li A.active:hover {BACKGROUND: url(../images/switcher.gif) 0px 0px}

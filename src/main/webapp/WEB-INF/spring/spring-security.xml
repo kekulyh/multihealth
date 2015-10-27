@@ -1,0 +1,72 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd
+	 http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	    ">
+
+	
+
+	<sec:http auto-config="true" authentication-manager-ref="userAuthManager" pattern="/**" use-expressions="true" >
+		 
+		<sec:intercept-url pattern="/index1" access="ROLE_SERVICE" />
+		
+        <sec:access-denied-handler error-page="/error.jsp"/>
+       <!--  <sec:intercept-url pattern="login" access="hasAnyRole('ROLE_ANONYMOUS','ROLE_SERVICE')"></sec:intercept-url>-->
+		<sec:form-login login-page="/login123" authentication-failure-url="/login123?error=true" 
+			login-processing-url="/j_spring_security_check" default-target-url="/index" />
+	</sec:http>
+
+	<sec:authentication-manager id="userAuthManager">
+		<sec:authentication-provider user-service-ref="myUserDetailsService" />
+	</sec:authentication-manager>
+
+ 
+    <!--<beans:bean id="myUserDetailsService" class="com.spring.service.impl.MyUserDetailService"/>
+    
+     <beans:constructor-arg ><beans:ref bean="userDao"/>   </beans:constructor-arg> 
+    </beans:bean>-->
+	<!--
+	<beans:bean id="userDao" class="com.spring.dao.impl.UserDaoImpl" name="userDao"></beans:bean>
+	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+		destroy-method="close">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<beans:property name="url"
+			value="jdbc:mysql://localhost:3306/lkj?useUnicode=true&amp;shutdown=true" />
+		<beans:property name="username" value="root" />
+		<beans:property name="password" value="" />
+	</beans:bean>
+
+	<beans:bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource" ></beans:property>
+		<beans:property name="packagesToScan" value="com.spring" />
+		
+		<beans:property name="hibernateProperties">
+			<beans:props>
+				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</beans:prop>
+				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.hbm2ddl.auto">update</beans:prop>
+		</beans:props>
+		</beans:property>
+		</beans:bean>
+	
+	<beans:bean id="hibernateTemplate"
+		class="org.springframework.orm.hibernate3.HibernateTemplate" >
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+	</beans:bean>
+	
+	<beans:bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<beans:property name="sessionFactory" ref="sessionFactory" />
+		
+	</beans:bean>
+	
+	
+	<tx:annotation-driven proxy-target-class="true"/>
+	 -->
+	 </beans:beans>
+	
